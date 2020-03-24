@@ -14,12 +14,12 @@ Repo for lab of Data science for business course
 List of dataset with data about set found:<br/>
 
 <ul>
-  <li>Italy</li>
-  <li>USA</li>
+  <li>Italy (https://github.com/pcm-dpc/COVID-19)</li>
+  <li>USA (https://github.com/COVID19Tracking/covid-tracking-data)</li>
   <li>Switzerland</li>
-  <li>South Korea</li>
+  <li>South Korea (https://www.kaggle.com/kimjihoo/coronavirusdataset)</li>
   <li>China</li>
-  <li>Indonesia</li>
+  <li>Indonesia (https://www.kaggle.com/ardisragen/indonesia-coronavirus-cases)</li>
 </ul>  
 
 # Dataset utilization
