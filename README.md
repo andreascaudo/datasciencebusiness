@@ -16,7 +16,7 @@ List of dataset with data about set found:<br/>
 <ul>
   <li>Italy (https://github.com/pcm-dpc/COVID-19)</li>
   <li>USA (https://github.com/COVID19Tracking/covid-tracking-data)</li>
-  <li>Switzerland (https://www.kaggle.com/daenuprobst/covid19-cases-switzerland)<strong> all test null </strong</li>
+  <li>Switzerland (https://www.kaggle.com/daenuprobst/covid19-cases-switzerland)<strong> all test null </strong></li>
   <li>South Korea (https://www.kaggle.com/kimjihoo/coronavirusdataset)</li>
   <li>China</li>
   <li>Brazil (https://www.kaggle.com/unanimad/corona-virus-brazil)</li>
