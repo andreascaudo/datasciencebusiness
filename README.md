@@ -10,26 +10,11 @@ Repo for lab of Data science for business course
   <li>Analize how test quantity float since day 0</li>
 </ol>  
 
-# Available dataset 
-List of dataset with data about set found:<br/>
-
-<ul>
-  <li>Italy (https://github.com/pcm-dpc/COVID-19)</li>
-  <li>USA (https://github.com/COVID19Tracking/covid-tracking-data)</li>
-  <li>Switzerland (https://www.kaggle.com/daenuprobst/covid19-cases-switzerland)<strong> all test null </strong></li>
-  <li>South Korea (https://www.kaggle.com/kimjihoo/coronavirusdataset)</li>
-  <li>China</li>
-  <li>Brazil (https://www.kaggle.com/unanimad/corona-virus-brazil)</li>
-  <li>Indonesia (https://www.kaggle.com/ardisragen/indonesia-coronavirus-cases)</li>
-  <li> Hong Kong (https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent/resource/93f7bc85-f173-43a8-825c-c55fdad2e046) </li>
-  <li> Iceland (https://www.covid.is/data)</li>
-  <li> UK (https://github.com/tomwhite/covid-19-uk-data)</li>
-</ul>  
-
 # Dataset strucutre
 
-## Italy (national and regional)
+### Italy (national and regional)
 
+Source : https://github.com/pcm-dpc/COVID-19 <br/>
 <ul>
 <li><b>total_cases: </b>cumulative number of infect<br></li>
 <li><b>daily_cases: </b>daily new infect<br></li>
@@ -50,8 +35,9 @@ List of dataset with data about set found:<br/>
 <li><b>daily_test: </b>daily number of test made<br></li>
 </ul>
 
-## Brazil
+### Brazil
 
+Source : https://www.kaggle.com/unanimad/corona-virus-brazil <br/>
 <ul>
 <li><b>total_cases: </b>cumulative number of infect<br></li>
 <li><b>daily_cases: </b>daily new infect<br></li>
@@ -62,23 +48,9 @@ List of dataset with data about set found:<br/>
 <li><b>daily_test: </b>daily number of test made<br></li>
 </ul>
 
-## Indonesia
+### Indonesia
 
-
-<ul>
-<li><b>total_cases: </b>cumulative number of infect<br></li>
-<li><b>daily_cases: </b>daily new infect<br></li>
-<li><b>actual_cases: </b>people actually infect<br></li>
-<li><b>total_healed: </b>cumulative number of healed<br></li>
-<li><b>daily_healed: </b>daily number of healed<br></li>
-<li><b>total_dead: </b>cumulative number of dead<br></li>
-<li><b>daily_dead: </b>daily number of dead<br></li>
-<li><b>total_test: </b>cumulative number of test made<br></li>
-<li><b>daily_test: </b>daily number of test made<br></li>
-</ul>
-
-##South Korea
-
+Source : https://www.kaggle.com/ardisragen/indonesia-coronavirus-cases <br/>
 <ul>
 <li><b>total_cases: </b>cumulative number of infect<br></li>
 <li><b>daily_cases: </b>daily new infect<br></li>
@@ -91,8 +63,9 @@ List of dataset with data about set found:<br/>
 <li><b>daily_test: </b>daily number of test made<br></li>
 </ul>
 
-## United Kingdom
+### South Korea
 
+Source : https://www.kaggle.com/kimjihoo/coronavirusdataset <br/>
 <ul>
 <li><b>total_cases: </b>cumulative number of infect<br></li>
 <li><b>daily_cases: </b>daily new infect<br></li>
@@ -105,8 +78,24 @@ List of dataset with data about set found:<br/>
 <li><b>daily_test: </b>daily number of test made<br></li>
 </ul>
 
-##USA
+### United Kingdom
 
+Source : https://github.com/tomwhite/covid-19-uk-data <br/>
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+### USA
+
+Source : https://github.com/COVID19Tracking/covid-tracking-data <br/>
 <ul>
 <li><b>total_cases: </b>cumulative number of infect<br></li>
 <li><b>daily_cases: </b>daily new infect<br></li>
@@ -124,3 +113,13 @@ List of dataset with data about set found:<br/>
 <li><b>total_test: </b>cumulative number of test made<br></li>
 <li><b>daily_test: </b>daily number of test made<br></li>
 </ul>
+
+# Future dataset 
+List of dataset with data about test found:<br/>
+
+<ul>
+  <li>Switzerland (https://www.kaggle.com/daenuprobst/covid19-cases-switzerland)<strong> all test null </strong></li>
+  <li>China</li>
+  <li> Hong Kong (https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent/resource/93f7bc85-f173-43a8-825c-c55fdad2e046) </li>
+  <li> Iceland (https://www.covid.is/data)</li>
+</ul>  
