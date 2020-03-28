@@ -120,4 +120,5 @@ List of dataset with data about test found:<br/>
   <li>China</li>
   <li> Hong Kong (https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent/resource/93f7bc85-f173-43a8-825c-c55fdad2e046) </li>
   <li> Iceland (https://www.covid.is/data)</li>
+  <li> India (https://www.kaggle.com/sudalairajkumar/covid19-in-india)</li>
 </ul>  
