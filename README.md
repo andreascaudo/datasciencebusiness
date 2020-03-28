@@ -106,8 +106,6 @@ Source : https://github.com/COVID19Tracking/covid-tracking-data <br/>
 <li><b>daily_dead: </b>daily number of dead<br></li>
 <li><b>total_home_isolation: </b>cumulative number of people forced to home isolation<br></li>
 <li><b>daily_home_isolation: </b>daily number of people forced to home isolation, variation between day before, can be negative<br></li>
-<li><b>total_recovered_with_symptoms: </b>cumulative number of people recovered with symptoms<br></li>
-<li><b>daily_recovered_with_symptoms: </b>daily number of people recovered with symptoms, variation between day before, can be negative<br></li>
 <li><b>total_hospitalized: </b>cumulative number of hospitalized: simple recover + intensive care<br></li>
 <li><b>daily_hospitalized: </b>daily number of hospitalized: simple recover + intensive care, variation between day before, can be negative<br></li>
 <li><b>total_test: </b>cumulative number of test made<br></li>
