@@ -26,9 +26,101 @@ List of dataset with data about set found:<br/>
   <li> UK (https://github.com/tomwhite/covid-19-uk-data)</li>
 </ul>  
 
-# Dataset utilization
-1.PC Italia <br/>
-2.PC Italia - ISTAT <br/>
-3.PC Italia - ISTAT + dataset of EU, USA and UK test to be found <br/>
-4.PC Italia - ISTAT + dataset of people mobility to be found <br/>
-5.as point 3
+# Dataset strucutre
+
+## Italy (national and regional)
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_home_isolation: </b>cumulative number of people forced to home isolation<br></li>
+<li><b>daily_home_isolation: </b>daily number of people forced to home isolation, variation between day before, can be negative<br></li>
+<li><b>total_recovered_with_symptoms: </b>cumulative number of people recovered with symptoms<br></li>
+<li><b>daily_recovered_with_symptoms: </b>daily number of people recovered with symptoms, variation between day before, can be negative<br></li>
+<li><b>total_intensive_care: </b>cumulative number of people in intesive care<br></li>
+<li><b>daily_intensive_care: </b>daily number of people in intesive care, variation between day before, can be negative<br></li>
+<li><b>total_hospitalized: </b>cumulative number of hospitalized: simple recover + intensive care<br></li>
+<li><b>daily_hospitalized: </b>daily number of hospitalized: simple recover + intensive care, variation between day before, can be negative<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+## Brazil
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+## Indonesia
+
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+##South Korea
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+## United Kingdom
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
+
+##USA
+
+<ul>
+<li><b>total_cases: </b>cumulative number of infect<br></li>
+<li><b>daily_cases: </b>daily new infect<br></li>
+<li><b>actual_cases: </b>people actually infect<br></li>
+<li><b>total_healed: </b>cumulative number of healed<br></li>
+<li><b>daily_healed: </b>daily number of healed<br></li>
+<li><b>total_dead: </b>cumulative number of dead<br></li>
+<li><b>daily_dead: </b>daily number of dead<br></li>
+<li><b>total_home_isolation: </b>cumulative number of people forced to home isolation<br></li>
+<li><b>daily_home_isolation: </b>daily number of people forced to home isolation, variation between day before, can be negative<br></li>
+<li><b>total_recovered_with_symptoms: </b>cumulative number of people recovered with symptoms<br></li>
+<li><b>daily_recovered_with_symptoms: </b>daily number of people recovered with symptoms, variation between day before, can be negative<br></li>
+<li><b>total_hospitalized: </b>cumulative number of hospitalized: simple recover + intensive care<br></li>
+<li><b>daily_hospitalized: </b>daily number of hospitalized: simple recover + intensive care, variation between day before, can be negative<br></li>
+<li><b>total_test: </b>cumulative number of test made<br></li>
+<li><b>daily_test: </b>daily number of test made<br></li>
+</ul>
