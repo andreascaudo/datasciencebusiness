@@ -2,8 +2,10 @@ from bs4 import BeautifulSoup
 import csv
 import dateparser
 import math
+import pdfplumber
 import re
 import sqlite3
+from titlecase import titlecase
 
 from util import (
     format_country,
@@ -11,21 +13,8 @@ from util import (
     normalize_int,
     normalize_whitespace,
     lookup_health_board_code,
+    lookup_local_government_district_code,
 )
-
-uk_pattern = re.compile(
-    r"As of (?P<time>.+?) on (?P<date>.+?), (?P<tests>.+?) people have been tested in the (?P<country>.+?), of which (?P<negative_tests>.+?) were confirmed negative and (?P<positive_tests>.+?) were confirmed.+?positive."
-)
-wales_pattern = re.compile(
-    r"(?s)Updated: (?P<time>.+?),? \S+ (?P<date>\d+\s\w+(\s\d{4})?).+? new cases have tested positive.+in (?P<country>.+?), bringing the total number of confirmed cases to (?P<positive_tests>\w+).+“(?P<deaths>.+?) people in Wales.+? died"
-)
-scotland_pattern = re.compile(
-    r"(?s)Scottish test numbers: (?P<date>\d+\s\w+\s\d{4}).+?A total of (?P<tests>.+?) (?P<country>.+?) tests have concluded.+?(?P<negative_tests>[\d,]+?) tests were.+?negative.+?(?P<positive_tests>[\d,]+?) tests were.+?positive.+?(?P<deaths>.+?) patients?.+?have died"
-)
-ni_pattern = re.compile(
-    r"(?s)As of (?P<time>.+?) on (?P<date>.+?), testing has resulted in .+? new positive cases,? bringing the total number of confirmed cases in (?P<country>.+?) to (?P<positive_tests>.+?)\..+?To date (?P<deaths>.+?) people who tested positive have sadly died\..*?The total number of tests completed in Northern Ireland is (?P<tests>.+?)\."
-)
-
 
 def get_text_from_html(html):
     soup = BeautifulSoup(html, features="html.parser")
@@ -34,7 +23,7 @@ def get_text_from_html(html):
     return text
 
 def date_value_parser_fn(value):
-    return dateparser.parse(value).strftime("%Y-%m-%d")
+    return dateparser.parse(value, locales=["en-GB"]).strftime("%Y-%m-%d")
 
 
 def int_value_parser_fn(value):
@@ -67,6 +56,7 @@ def parse_totals_general(pattern_dict, country, text):
             result[name] = value_parser_fn(value)
             break
         if not name in result:
+            print("Could not parse '{}'".format(name))
             return None
     return result
 
@@ -76,15 +66,15 @@ def parse_totals(country, html):
         pattern_dict = {
             "Date": (r"As of (?P<Time>.+?) on (?P<Date>.+?),", date_value_parser_fn),
             "Tests": (r"As of (?P<Time>.+?) on (?P<Date>.+?), (a total of )?(?P<Tests>[\d,]+?) people have been tested", int_value_parser_fn),
-            "ConfirmedCases": (r"and (?P<ConfirmedCases>[\d,]+?) were confirmed (as )?positive", int_value_parser_fn),
-            "Deaths": (None, nan_value_parser_fn),
+            "ConfirmedCases": (r"(and|of which) (?P<ConfirmedCases>[\d,]+?) were confirmed (as )?positive", int_value_parser_fn),
+            "Deaths": (r"(?P<Deaths>[\d,]+) (patients?.+?)?have died", int_value_parser_fn),
         }
         result = parse_totals_general(pattern_dict, country, text)
         return result
     elif country == "Scotland":
         pattern_dict = {
             "Date": (r"Scottish test numbers: (?P<Date>\d+\s\w+\s\d{4})", date_value_parser_fn),
-            "Tests": (r"A total of (?P<Tests>.+?) Scottish tests have concluded", int_value_parser_fn),
+            "Tests": (r"total of (?P<Tests>.+?) (Scottish tests have concluded|people in Scotland have been tested)", int_value_parser_fn),
             "ConfirmedCases": (r"(?P<ConfirmedCases>[\d,]+?) tests were (confirmed)?positive", int_value_parser_fn),
             "Deaths": (r"(?P<Deaths>\w+) patients?.+?have died", int_value_parser_fn),
         }
@@ -94,7 +84,7 @@ def parse_totals(country, html):
         pattern_dict = {
             "Date": (r"Updated: (?P<Time>.+?),? \S+ (?P<Date>\d+\s\w+(\s\d{4})?)", date_value_parser_fn),
             "Tests": (None, nan_value_parser_fn),
-            "ConfirmedCases": (r"total number of confirmed cases to (?P<ConfirmedCases>\w+)", int_value_parser_fn),
+            "ConfirmedCases": (r"total number of confirmed cases to (?P<ConfirmedCases>[\d]+[\d,]*[\d]*)", int_value_parser_fn),
             "Deaths": ((r"(?P<Deaths>\w+) people in Wales who tested positive.+? died", r"the number of deaths in Wales to (?P<Deaths>\w+)"), int_value_parser_fn),
         }
         result = parse_totals_general(pattern_dict, country, text)
@@ -110,6 +100,25 @@ def parse_totals(country, html):
         return result
     return None
 
+
+def get_text_from_pdf(local_pdf_file):
+    pdf = pdfplumber.open(local_pdf_file)
+    page = pdf.pages[0] # just extract first page
+    text = page.extract_text()
+    text = normalize_whitespace(text)
+    return text
+
+
+def parse_totals_pdf_text(country, text):
+    if country == "Northern Ireland":
+        pattern_dict = {
+            "Date": (r"Date generated: (?P<Date>[\d,]+/[\d,]+/[\d,]+)", date_value_parser_fn),
+            "Tests": (r"Number of Individuals tested( for COVID-19| for SARS-COV2 Virus)?:? (?P<Tests>[\d,]+)", int_value_parser_fn),
+            "ConfirmedCases": (r"(Number of Individuals (with confirmed|testing positive for) (COVID-19|SARS-COV2 Virus)|Cumulative number of laboratory confirmed COVID-19 cases):? (?P<ConfirmedCases>[\d,]+)", int_value_parser_fn),
+            "Deaths": (r"(Total|Cumulative) number of (Trust |reported )?deaths( associated with COVID-19)?: (?P<Deaths>[\d,]+)", int_value_parser_fn),
+        }
+        result = parse_totals_general(pattern_dict, country, text)
+        return result
 
 def print_totals(results):
     date = results["Date"]
@@ -196,9 +205,12 @@ def parse_daily_areas(date, country, html):
             ]
             if len(columns) == 0:
                 continue
+            if columns[0].lower() in ("", "health board"):
+                continue
             area = columns[0].replace("Ayrshire & Arran", "Ayrshire and Arran")
+            area = columns[0].replace("Eileanan Siar (Western Isles)", "Western Isles")
             area_code = lookup_health_board_code(area)
-            cases = columns[1]
+            cases = columns[1].replace("*", "")
             output_row = [date, country, area_code, area, cases]
             output_rows.append(output_row)
         return output_rows
@@ -210,11 +222,7 @@ def parse_daily_areas(date, country, html):
             ]
             if len(columns) == 0:
                 continue
-            if (
-                columns[0] == "Health Board"
-                or columns[0] == "Wales"
-                or columns[0] == "TOTAL"
-            ):
+            if columns[0].lower() in ("", "health board", "wales", "total", "wales total"):
                 continue
             if is_blank(columns[-1]):
                 continue
@@ -230,10 +238,33 @@ def parse_daily_areas(date, country, html):
             )
             if is_blank(area):
                 area = columns[0]
-            cases = columns[-1]
+            cases = columns[-1].replace("*","")
             output_row = [date, country, lookup_health_board_code(area), area, cases]
             output_rows.append(output_row)
         return output_rows
+    return None
+
+
+def parse_daily_areas_pdf(date, country, local_pdf_file):
+    if country == "Northern Ireland":
+        pdf = pdfplumber.open(local_pdf_file)
+        for page in pdf.pages:
+            try:
+                table = page.extract_table()
+                if table[0][0] == "Local Government District":
+                    output_rows = [["Date", "Country", "AreaCode", "Area", "TotalCases"]]
+                    for table_row in table[1:]:
+                        if table_row[0].lower() == "total":
+                            continue
+                        area = normalize_whitespace(titlecase(table_row[0]))
+                        area = area.replace("Ards and North Down", "North Down and Ards")
+                        area_code = lookup_local_government_district_code(area)
+                        cases = normalize_int(table_row[1])
+                        output_row = [date, country, area_code, area, cases]
+                        output_rows.append(output_row)
+                    return output_rows
+            except IndexError:
+                pass # no table on page
     return None
 
 
