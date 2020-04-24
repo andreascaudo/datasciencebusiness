@@ -39,3 +39,29 @@ All changes to the project, new features and information are documented in this 
 - Change: "nuovi_attualmente_positivi" renamed to "variazione_totale_positivi" (totale_attualmente positivi giorno corrente - totale_attualmente positivi giorno precedente) in "dati_regioni" and "dati_andamento_nazionale"
 - Add: "nuovi_positivi" (totale_casi giorno corrente - totale_casi giorno precedente) in "dati_regioni" and "dati_andamento_nazionale"
 - Change: Regione "Emilia Romagna" renamed to "Emilia-Romagna" in "dati-regioni" and "dati-province" ("denominazione_regione")
+
+## 2020-04-20
+
+- Add: "casi_testati", total number of people tested from 2020-04-19
+
+##  2020-04-21
+
+- Add: new shape file with subregional containment measures (provinces, municipalities and hamlets) with related metadata.
+
+## 2020-04-22
+
+- Add: new dataset dpc supplies contracts (contracts and payments) in csv and json format. [link to dashboard](https://app.powerbi.com/view?r=eyJrIjoiNzA1YmQ0NDctYzY3ZC00ZTlkLWI1MTQtMThmNTEwNWY3NjM4IiwidCI6IjlhMDZhOTA3LTA2OTUtNDA0YS05NmY4LTRhMWU5YTJmYjQxZCIsImMiOjl9) - [link to dataset ](https://github.com/pcm-dpc/COVID-19/tree/master/dati-contratti-dpc-forniture)
+
+## 2020-04-22
+
+- Add:metadata of the new dpc supplies contracts dataset (contracts and payments) in DCAT-AP-IT format
+- Integrated README with specifications for the data model of the dataset areas (national and subregional)
+
+## Next updated
+
+- API Rest (Json)
+- GraphQL
+
+## hypothesis changes
+
+- Change codice_regione for P.A. Bolzano and P.A. Trento: from 04 to 21 for P.A. Bolzano and from 04 to 22 for P.A. Trento (province code)
