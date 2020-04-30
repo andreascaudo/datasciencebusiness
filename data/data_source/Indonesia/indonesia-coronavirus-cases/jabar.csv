@@ -1,4 +1,4 @@
-date,positive_total,positive_daily,odp_process,odp_end,odp_total,odp_daily,pdp_process,pdp_end,pdp_total,pdp_daily,total_deceased,total_released,total_positive_kotabekasi,total_positive_depok,total_positive_kabbekasi,total_positive_kotabandung,total_positive_kotabogor,total_positive_kabbogor,total_positive_kotacimahi,total_positive_kabbandung,total_positive_kabkuningan,total_positive_kabpurwakarta,total_positive_kabcirebon,total_positive_kabsukabumi,total_positive_kabsumedang,total_positive_kotatasikmalaya,total_positive_kabciamis,total_positive_kabcianjur,total_positive_kabgarut,total_positive_kabindramayu,total_positive_kabkarawang,total_positive_kabmajalengka,total_positive_kabpangandaran,total_positive_kabsubang,total_positive_kabtasikmalaya,total_positive_kotabanjar,total_positive_kotacirebon,total_positive_kotasukabumi
+﻿date,positive_total,positive_daily,odp_process,odp_end,odp_total,odp_daily,pdp_process,pdp_end,pdp_total,pdp_daily,total_deceased,total_released,total_positive_kotabekasi,total_positive_depok,total_positive_kabbekasi,total_positive_kotabandung,total_positive_kotabogor,total_positive_kabbogor,total_positive_kotacimahi,total_positive_kabbandung,total_positive_kabkuningan,total_positive_kabpurwakarta,total_positive_kabcirebon,total_positive_kabsukabumi,total_positive_kabsumedang,total_positive_kotatasikmalaya,total_positive_kabciamis,total_positive_kabcianjur,total_positive_kabgarut,total_positive_kabindramayu,total_positive_kabkarawang,total_positive_kabmajalengka,total_positive_kabpangandaran,total_positive_kabsubang,total_positive_kabtasikmalaya,total_positive_kotabanjar,total_positive_kotacirebon,total_positive_kotasukabumi
 01-Mar-20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 02-Mar-20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 03-Mar-20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -27,3 +27,14 @@ date,positive_total,positive_daily,odp_process,odp_end,odp_total,odp_daily,pdp_p
 26-Mar-20,78,5,0,0,3703,34,0,0,578,6,0,0,19,10,6,12,9,5,3,3,2,2,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
 27-Mar-20,98,20,3575,1399,4974,1271,524,134,658,80,14,5,20,14,12,12,9,5,4,3,2,2,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
 28-Mar-20,98,0,3575,1399,4974,0,524,134,658,0,14,5,20,14,12,12,9,5,4,3,2,2,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+29-Mar-20,149,30,5293,1988,7281,1862,660,190,850,186,19,9,20,20,13,18,16,7,7,5,2,2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+30-Mar-20,149,30,5293,1988,7281,1862,660,190,850,186,19,9,20,20,13,18,16,7,7,5,2,2,2,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0
+31-Mar-20,180,31,8467,2562,11038,3757,696,202,898,48,20,9,27,31,18,18,18,9,7,5,2,2,2,1,1,1,0,0,0,0,6,1,0,0,0,0,0,0
+1-Apr-20,220,22,8467,2562,14291,1774,747,256,898,41,20,9,29,32,20,21,26,11,7,6,2,2,2,1,1,1,0,0,0,0,8,1,0,0,0,0,0,0
+2-Apr-20,220,22,11245,3046,14291,1416,747,256,1003,66,21,11,29,37,20,23,23,11,7,6,2,2,2,1,1,1,0,0,0,0,8,1,0,0,0,0,0,0
+3-Apr-20,225,5,11245,3046,16932,685,747,256,1205,136,21,11,38,37,21,24,24,14,7,6,2,2,2,1,1,1,0,0,0,0,8,1,0,0,0,0,0,0
+4-Apr-20,247,22,11245,3046,20712,4320,747,256,1354,149,21,11,38,37,24,29,33,16,8,6,2,2,2,1,1,1,0,0,0,0,8,1,0,0,0,0,0,0
+5-Apr-20,252,5,16916,5075,21991,1279,998,453,1451,97,28,12,38,38,28,29,36,17,8,6,2,2,2,1,1,1,0,0,0,0,8,1,0,0,0,0,0,0
+6-Apr-20,263,11,16916,5075,21991,668,990,453,1451,219,28,12,38,41,28,32,36,17,8,6,3,3,2,2,1,2,0,0,0,0,8,1,0,0,2,1,1,0
+7-Apr-20,343,80,16916,5075,21991,2365,990,453,1451,56,28,12,38,42,28,49,37,24,11,9,3,4,2,2,1,2,1,0,2,1,8,1,0,1,2,1,1,1
+8-Apr-20,366,23,17231,8363,25594,570,1279,637,1916,190,35,17,38,47,29,62,42,27,11,12,3,6,2,2,2,2,1,0,2,1,8,1,0,1,2,1,1,1
