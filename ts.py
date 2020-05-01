@@ -58,6 +58,7 @@ def find_timegaps(series, gap, gap_comparison='higher', divergent_only=False):
 
 def plot_interval(
         df,
+        state,
         columns=[],
         interval='hour',
         figsize_width=11,
@@ -141,6 +142,6 @@ def plot_interval(
 
     for name, ax in zip(columns, axes):
         sns.boxplot(data=df, x=interval, y=name, ax=ax)
-        ax.set_title(name)
+        ax.set_title(name + " " + state)
         if hide_xlabel and ax != axes[-1]:
             ax.set_xlabel('')
