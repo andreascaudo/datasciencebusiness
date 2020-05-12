@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def find_timegaps(series, gap, gap_comparison='higher', divergent_only=False):
     """
