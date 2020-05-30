@@ -1,0 +1,5 @@
+TODO LIST:
+1)Clusterization on countries trait
+2)Insert lockdown measure (countries cluster or phase cluster??)
+3)Combine cluster adding some pshae measure to define behavior
+4)Get 30L and Nobel prize
