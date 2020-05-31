@@ -1,6 +1,6 @@
-country,political_spectrum,systems_of_government,continent
-italy,centre-left,parliamentary republics,europe
-india,centre-right,parliamentary republics,asia
-south_korea,centre-left,semi-presidential system,asia
-united_kingdom,centre-right,constitutional monarchy,europe
-usa,centre-right,presidential republics,america
+country,political_spectrum,democracy_score,continent,GPD_pc,median_age
+italy,centre-left,7.52,europe,31586.67,45.5
+india,centre-right,6.9,asia,1970.09,28.1
+south_korea,centre-left,8,asia,34465.79,41.8
+united_kingdom,centre-right,8.52,europe,42060.17,40.5
+usa,centre-right,7.96,america,62067,38.1
